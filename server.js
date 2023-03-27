@@ -43,7 +43,7 @@ io.on("connection", (socket) => {
   // Game Loop
   socket.on("gameLoop", () => io.emit("drawPlayers", playerData));
   socket.on("sentMessage", (msg) => {
-    io.emit("receiveMessage", msg);
+    io.emit("receiveMessage", `User ${currentUserId}: ` + msg);
   });
 });
 
